@@ -1,6 +1,7 @@
 package ca.sheridancollege.garzonba.week2.controller;
 
 import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -8,6 +9,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.Date;
 
 // Assigning the file as a controller
 @Controller
@@ -28,11 +32,11 @@ public class HomeController {
     to use the @RequestParam decorator so spring knows
     that it is a param that it will receive.
     HttpServrletResponse will let us override the response*/
-    public void formPage(HttpServletResponse response, String firstName, String lastName, String email, Long studentId, @RequestParam(required = false) boolean checkbox) {
+    public void formPage(HttpServletResponse response, String firstName, String lastName, String email, Long studentId, @RequestParam(required = false) boolean checkbox, @RequestParam LocalDate date, @RequestParam LocalTime time) {
         try {
             // Create a writer to format the data. Close it at the end
             PrintWriter out = response.getWriter();
-            String output = String.format("<html><body>%s<br>%s<br>%s<br>%o<br>Checkbox: %b</body></html>", firstName, lastName, email, studentId, checkbox);
+            String output = String.format("<html><body>%s<br>%s<br>%s<br>%o<br>Checkbox: %b<br>Date: " + date + "<br>Time: " + time + "</body></html>", firstName, lastName, email, studentId, checkbox);
             out.print(output);
             out.close();
         } catch (IOException e) {
