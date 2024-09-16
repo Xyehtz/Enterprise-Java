@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index page</title>
+</head>
+<body>
+<h1>Please fill out the course information</h1>
+<form  method="post"    action="/processForm">
+    <label for="id-box">Course ID: </label>
+    <input type="number" name="id" id="id-box"><br>
+    
+    <label for="prefix">Course Prefix: </label>
+    <input type="text" name="prefix" id="prefix"><br>
+    
+    <label for="code">Course Code: </label>
+    <input type="number" name="code" id="code"><br>
+    
+    <label for="name">Course Name: </label>
+    <input type="text" name="name" id="name"><br>
+    <input type="submit"  value="AddCourse">
+</form>
+</body>
+</html>

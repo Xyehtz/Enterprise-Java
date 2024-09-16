@@ -1,7 +1,5 @@
 package ca.sheridancollege.garzonba.week3.beans;
 
-import lombok;
-
 @Data
 @Builder
 public class Inventory {
