@@ -3,25 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Java Form</title>
+    <link rel="stylesheet" href="/css/formStyle.css">
 </head>
 <body>
   <h1>Do you think Java is fun?</h1>
-
-  <form>
-    <input type="radio" id="yesInput">
+  <form action="/submitForm" method="post">
+    <input type="radio" id="yesInput" name="isJavaFun" value="Yes">
     <label for="yesInput">Yes</label>
     <br>
-    <input type="radio" id="noInput">
+    <input type="radio" id="noInput" name="isJavaFun" value="No">
     <label for="noInput">No</label>
     <br>
-    <input type="checkbox" id="addMail">
-    <label for="addMail">Add to mailing list</label>
+    <input type="checkbox" id="addEmail" name="addEmail">
+    <label for="addEmail">Add to mailing list</label>
+    <hr>
+    <label for="name">Name: </label>
+    <input type="text" id="name" name="name">
     <br>
-    <label for="name">Name</label>
-    <input type="text" id="name">
+    <label for="email">Email: </label>
+    <input type="email" id="email" name="email">
     <br>
-    <label for="email">Email</label>
-    <input type="email" id="email">
+    <input type="submit" value="Submit">
   </form>
 </body>
 </html>

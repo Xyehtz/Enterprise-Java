@@ -1,0 +1,30 @@
+@font-face {
+    font-family: Ubuntu;
+    src: url("../fonts/Ubuntu-Regular.ttf");
+    font-weight: normal;
+}
+
+* {
+    font-family: Ubuntu;
+}
+
+h1 {
+    color: red;
+}
+
+.firstSection {
+    padding-bottom: 25px;
+    padding-left: 3px;
+}
+
+input[type='text'] and input[type='email']{
+    padding-left: 5px;
+}
+
+label[for='email'] {
+    padding-right: 3px;
+}
+
+input[type='submit'] {
+    margin-top: 15px;
+}

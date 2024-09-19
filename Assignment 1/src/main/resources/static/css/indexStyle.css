@@ -9,6 +9,14 @@
 }
 
 h1 {
-    color: black;
-    
+    color: red;
+    padding-bottom: 5px;
+}
+
+a:link {
+    text-decoration: mediumpurple underline;
+}
+
+a:visited {
+    text-decoration: black;
 }
