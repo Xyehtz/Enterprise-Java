@@ -14,5 +14,6 @@ public class VideoGames {
     private String title;
     private String publisher;
     private String platform;
+    private String[] platforms = {"Xbox Series S", "Xbox Series X", "PlayStation 5", "PC"};
     private BigDecimal price;
 }
