@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cool Spy App</title>
+</head>
+<body>
+    <div>
+        <h1>Super Cool Spy App</h1>
+
+        <h2>Create a mission</h2>
+        <form method="post" action="/mission">
+            <button type="submit">Create Mission</button>
+        </form>
+
+        <h2>View Mission for:</h2>
+        <form action="/getMission" method="post">
+            <label for="agent">Choose your agent</label>
+            <br>
+            <select name="agent" id="agent">
+                <option value="">Johnny English</option>
+                <option value="">Natasha Romanova</option>
+                <option value="">Austin Powers</option>
+            </select>
+            <br>
+            <button type="submit">Go</button>
+        </form>
+    </div>
+</body>
+</html>
