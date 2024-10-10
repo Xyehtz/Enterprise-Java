@@ -1,0 +1,7 @@
+CREATE TABLE Mission (
+    id VARCHAR(5) NOT NULL PRIMARY KEY,
+    agent VARCHAR(255) NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    gadget1 VARCHAR(255) NOT NULL,
+    gadget2 VARCHAR(255) NOT NULL
+);
