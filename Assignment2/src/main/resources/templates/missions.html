@@ -1,24 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Missions for</title>
+  <link rel="stylesheet" type="text/css" media="all" href="../static/css/missionsStyle.css" th:href="@{/css/missionsStyle.css}">
 </head>
 <body>
-  <h1>Missions for ___</h1>
+  <h1 th:each="mission: ${missionList}" th:text="'Missions for Agent ' + ${mission.agent}"></h1>
   <br>
   <table>
     <tr>
+      <th>Mission ID</th>
+      <th>Mission Agent</th>
       <th>Mission Title</th>
       <th>Gadget 1</th>
       <th>Gadget 2</th>
       <th>Operations</th>
     </tr>
-    <tr>
-      <td>penis</td>
-      <td>penis</td>
-      <td>penis</td>
-      <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+    <tr th:each="mission : ${missionList}">
+      <td th:text="${mission.id}">123456</td>
+      <td th:text="${mission.agent}">Agent</td>
+      <td th:text="${mission.title}">Title</td>
+      <td th:text="${mission.gadget1}">Gadget 1</td>
+      <td th:text="${mission.gadget2}">Gadget 2</td>
+      <td><a th:href="@{/editMission/}+${mission.id}">Edit</a> | <a th:href="@{/deleteMission/}+${mission.id} ">Delete</a></td>
     </tr>
   </table>
 </body>

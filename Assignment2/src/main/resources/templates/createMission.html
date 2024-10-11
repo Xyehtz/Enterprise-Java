@@ -1,22 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Create Mission</title>
+    <link rel="stylesheet" type="text/css" media="all" href="../static/css/createMissionStyle.css" th:href="@{/css/createMissionStyle.css}">
 </head>
 <body>
     <div>
         <h1>Create Mission</h1>
         <br>
-        <form action="" method="post">
-            <label for="missionTitle">Mission title: </label>
-            <input type="text" name="missionTitle" id="missionTitle" required>
+        <form th:action="@{/createMission}" method="post" th:object="${mission}">
+            <label for="id">Mission ID: </label>
+            <input type="number" name="id" id="id" required>
+            <br>
+            <label for="title">Mission title: </label>
+            <input type="text" name="title" id="title" required>
             <br>
             <label for="agent">Agent: </label>
             <select name="agent" id="agent" required>
-                <option value="">Johnny English</option>
-                <option value="">Natasha Romanova</option>
-                <option value="">Austin Powers</option>
+                <option value="">Select an option</option>
+                <option value="Johnny English">Johnny English</option>
+                <option value="Natasha Romanova">Natasha Romanova</option>
+                <option value="Austin Powers">Austin Powers</option>
             </select>
             <br>
             <h1>Enter Gadgets</h1>

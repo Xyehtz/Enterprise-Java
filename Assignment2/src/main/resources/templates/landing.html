@@ -1,26 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Cool Spy App</title>
+    <link rel="stylesheet" type="text/css" media="all" href="../static/css/landingStyle.css" th:href="@{/css/landingStyle.css}">
 </head>
 <body>
     <div>
         <h1>Super Cool Spy App</h1>
 
         <h2>Create a mission</h2>
-        <form method="post" action="/mission">
+        <form method="get" th:action="@{/createMission}">
             <button type="submit">Create Mission</button>
         </form>
 
         <h2>View Mission for:</h2>
-        <form action="/getMission" method="post">
+
+        <form th:object="${mission}" th:action="@{/getMissions}" method="get">
+            <p th:value="${mission.agent}"></p>
             <label for="agent">Choose your agent</label>
             <br>
-            <select name="agent" id="agent">
-                <option value="">Johnny English</option>
-                <option value="">Natasha Romanova</option>
-                <option value="">Austin Powers</option>
+            <select name="agent" id="agent" th:field="*{agent}">
+                <option th:each="agent : *{agents}" th:text="${agent}" th:value="${agent}"></option>
             </select>
             <br>
             <button type="submit">Go</button>
